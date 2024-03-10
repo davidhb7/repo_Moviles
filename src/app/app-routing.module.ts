@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PaginaFotosPageModule } from './pages/pagina.fotos/pagina.fotos.module';
+import { PaginaFotosComponent } from './pages/pagina.fotos/pagina.fotos.component';
 
 const routes: Routes = [
   {
@@ -9,6 +11,10 @@ const routes: Routes = [
   {
     path: 'det-heroe/:id',
     loadChildren: () => import('./pages/det-heroe/det-heroe.module').then( m => m.DetHeroePageModule)
+  },
+  {
+    path: 'pagina-fotos/:id',
+    loadChildren:() => import('./pages/pagina.fotos/pagina.fotos.module').then( m => m.PaginaFotosPageModule)
   }
 
 

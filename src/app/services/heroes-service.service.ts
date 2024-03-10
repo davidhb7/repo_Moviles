@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Heroe } from '../interfaces/heroes.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -66,7 +67,7 @@ export class HeroesServiceService {
     },
   ];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
   //TRA LOS HEROES
@@ -96,5 +97,9 @@ export class HeroesServiceService {
     return busquedaHeroes;
   }
 
+
+  navegarFotosHeroe(idHeroe: any){
+    this.router.navigate(['/pagina-fotos', idHeroe]);
+  }
 
 }

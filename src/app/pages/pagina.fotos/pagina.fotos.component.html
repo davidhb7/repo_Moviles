@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Fotos de {{unHeroe.nombre}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        sizeXs="12" sizeSm="6" size="4" sizeMd="4" sizeLg="3" sizeXl="2"
+        *ngFor="let foto of unasFotos">
+        <img [src]="foto.images" alt="Hero Image">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

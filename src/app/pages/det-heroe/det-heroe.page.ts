@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Heroe } from 'src/app/interfaces/heroes.interface';
 import { HeroesServiceService } from 'src/app/services/heroes-service.service';
 
@@ -15,7 +15,8 @@ export class DetHeroePage implements OnInit {
 
   constructor(
     route:ActivatedRoute,
-    data:HeroesServiceService
+    data:HeroesServiceService,
+
     ) {
     this.unId=route.snapshot.params["id"];
     this.unHeroe=data.getUnHeroe(this.unId);
@@ -23,11 +24,14 @@ export class DetHeroePage implements OnInit {
     console.log(this.unId);
     console.log(this.unHeroe);
 
-   }
+  }
 
   ngOnInit() {
     return;
   }
+
+
+
 
 
 }
