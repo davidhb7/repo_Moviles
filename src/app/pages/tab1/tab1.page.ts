@@ -8,13 +8,8 @@ import { HeroesServiceService } from 'src/app/services/heroes-service.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  visible: boolean =true;
-  evento: any ={
-    nombre:"Dia 1",
-    lugar: "USB Cali",
-    fecha: "18-02-2024"
-  }
-
+  
+  useCardView: boolean = false; // Variable para controlar la vista de tarjetas o lista normal
   unosHeroes: Heroe[]=[];
 
   //**************************************CONSTRUCTOR
@@ -24,13 +19,10 @@ export class Tab1Page {
   }
 
 
-  cambioEstado(){
-    const nombre="David Herrera Bermúdez";
-    let rango = "Cabo primero";
-
-    this.visible= !this.visible;
-    console.log(this.visible)
+  toggleListView() {
+    this.useCardView = !this.useCardView; // Cambia el estado de la vista de tarjetas
+    console.log("Estado es ", this.useCardView);
   }
 
-
 }
+ 

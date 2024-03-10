@@ -3,10 +3,19 @@
     <ion-title>
       Heroes
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleListView()">
+        <ion-icon name="card-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+<app-heroes [unosHeroes]="unosHeroes"></app-heroes>
+  <!--
+  -->
 
   <!--
     <ion-header collapse="condense">
@@ -30,9 +39,7 @@
     </ion-card-content>
   </ion-card>
   -->
-  <app-heroes [unosHeroes]="unosHeroes"></app-heroes>
-
-
+  
 
   <!--
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

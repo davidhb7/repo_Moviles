@@ -1,3 +1,4 @@
+<!--
 <ion-list>
   <ion-item *ngFor="let unHeroe of unosHeroes; let index">
     <ion-avatar slot="start">
@@ -8,5 +9,46 @@
     <ion-button (click)="navegarDetalleHeroe(unHeroe.id)">Detalles</ion-button>
     <ion-button (click)="navegarFotosHeroe(unHeroe.id)">Fotos</ion-button>
 
+  </ion-item>
+</ion-list>
+
+   <ion-card *ngIf="useCardView" *ngFor="let unHeroe of unosHeroes">
+     <img [src]="unHeroe.img" alt="Avatar" />
+     <ion-card-header>
+       <ion-card-title>{{ unHeroe.nombre }}</ion-card-title>
+       <ion-card-subtitle>{{ unHeroe.casa }}</ion-card-subtitle>
+     </ion-card-header>
+     <ion-card-content>
+
+     </ion-card-content>
+     <ion-button (click)="navegarDetalleHeroe(unHeroe.id)">Detalles</ion-button>
+     <ion-button (click)="navegarFotosHeroe(unHeroe.id)">Fotos</ion-button>
+   </ion-card>
+
+ -->
+
+ <ion-card *ngIf="useCardView">
+  <ion-card-content *ngFor="let unHeroe of unosHeroes">
+    <ion-avatar slot="start">
+      <img [src]="unHeroe.img" alt="Avatar" />
+    </ion-avatar>
+    <ion-card-header>
+      <ion-card-title>{{ unHeroe.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ unHeroe.bio }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button (click)="navegarDetalleHeroe(unHeroe.id)">Detalles</ion-button>
+    <ion-button (click)="navegarFotosHeroe(unHeroe.id)">Fotos</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-list *ngIf="!useCardView">
+  <ion-item *ngFor="let unHeroe of unosHeroes">
+    <ion-avatar slot="start">
+      <img [src]="[unHeroe.img]" alt="avatar" />
+    </ion-avatar>
+    <ion-label>{{unHeroe.nombre}}</ion-label>
+    <ion-label>{{unHeroe.casa}}</ion-label>
+    <ion-button (click)="navegarDetalleHeroe(unHeroe.id)">Detalles</ion-button>
+    <ion-button (click)="navegarFotosHeroe(unHeroe.id)">Fotos</ion-button>
   </ion-item>
 </ion-list>

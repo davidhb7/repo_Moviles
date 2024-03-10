@@ -11,7 +11,10 @@ export class HeroesComponent  implements OnInit {
 
   //@Inpit referencia la info de unosHeroes pasa a este componentes
   @Input() unosHeroes: Heroe[]=[];
-
+  @Input() useCardView: boolean = true; // Si cambias aqui si cambia a modo carta ---
+  
+  // @Input() useCardView!: boolean;
+  
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -27,3 +30,4 @@ export class HeroesComponent  implements OnInit {
 
 
 }
+ 
