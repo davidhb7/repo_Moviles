@@ -27,7 +27,7 @@
 
  -->
 
- <ion-card *ngIf="useCardView">
+ <ion-card *ngIf="x">
   <ion-card-content *ngFor="let unHeroe of unosHeroes">
     <ion-avatar slot="start">
       <img [src]="unHeroe.img" alt="Avatar" />
@@ -41,7 +41,7 @@
   </ion-card-content>
 </ion-card>
 
-<ion-list *ngIf="!useCardView">
+<ion-list *ngIf="!x">
   <ion-item *ngFor="let unHeroe of unosHeroes">
     <ion-avatar slot="start">
       <img [src]="[unHeroe.img]" alt="avatar" />

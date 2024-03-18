@@ -10,8 +10,8 @@ import { HeroesServiceService } from 'src/app/services/heroes-service.service';
 })
 export class DetHeroePage implements OnInit {
 
-  unId: number;
-  unHeroe: Heroe;
+  unId: number; //INICIALIZANDO LA VARIABLE PARA QUE LA RECIBA
+  unHeroe: Heroe; // INICIALIZANDO EL OBJETO BASE
 
   constructor(
     route:ActivatedRoute,

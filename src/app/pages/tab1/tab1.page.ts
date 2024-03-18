@@ -8,7 +8,7 @@ import { HeroesServiceService } from 'src/app/services/heroes-service.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  
+
   useCardView: boolean = false; // Variable para controlar la vista de tarjetas o lista normal
   unosHeroes: Heroe[]=[];
 
@@ -25,4 +25,3 @@ export class Tab1Page {
   }
 
 }
- 
